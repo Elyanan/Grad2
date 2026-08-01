@@ -122,7 +122,7 @@
     const items = data.timeline.map((item, index) => `
       <article class="timeline-item ${index % 2 === 0 ? "left" : "right"} reveal">
         <div class="timeline-node"><i data-lucide="${item.icon}"></i><span><i data-lucide="check"></i></span></div>
-        <div class="timeline-card"><p>${escapeHtml(item.date)}</p><h3>${escapeHtml(item.title)}</h3><div>${escapeHtml(item.description)}</div></div>
+        <div class="timeline-card"><p>${escapeHtml(item.date)}</p><h3>${escapeHtml(item.title)}</h3></div>
       </article>
     `).join("");
     timeline.insertAdjacentHTML("beforeend", items);

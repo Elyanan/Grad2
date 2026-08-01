@@ -79,14 +79,14 @@ window.GRADUATION_DATA = {
     ]
   },
   timeline: [
-    { id: "first-day", title: "First Day of High School", date: "The beginning", description: "A new chapter opened, filled with questions, possibility, and dreams still waiting for names.", icon: "landmark" },
-    { id: "friendships", title: "New Friendships", date: "Along the way", description: "Classrooms became memories, and ordinary days became stories shared with people who mattered.", icon: "users" },
-    { id: "challenges", title: "Challenges Faced", date: "The difficult days", description: "There were moments that asked for patience, courage, and one more try. She answered each one.", icon: "mountain" },
-    { id: "lessons", title: "Lessons Learned", date: "Growth", description: "Not every lesson came from a textbook. Some came from trying, changing, and beginning again.", icon: "book-open" },
-    { id: "exams", title: "Important Exams", date: "The final stretch", description: "Hours of preparation became proof that discipline can carry a dream across the finish line.", icon: "file-check-2" },
-    { id: "final-year", title: "Final School Year", date: "2025–2026", description: "The last year brought endings, milestones, and the first glimpse of everything coming next.", icon: "star" },
-    { id: "graduation", title: "Graduation Day", date: "Class of 2026", description: "The cap, the diploma, and a room full of pride. The moment she worked so hard to reach.", icon: "graduation-cap" },
-    { id: "next-chapter", title: "The Next Chapter", date: "Starting now", description: "A future that is unwritten, wide open, and entirely hers to make beautiful.", icon: "sparkles" }
+    { id: "first-day", title: "First Day of High School", date: "The beginning"},
+    { id: "friendships", title: "New Friendships", date: "Along the way", icon: "users" },
+    { id: "challenges", title: "Challenges Faced", date: "The difficult days", icon: "mountain" },
+    { id: "lessons", title: "Lessons Learned", date: "Growth", icon: "book-open" },
+    { id: "exams", title: "Important Exams", date: "The final stretch", icon: "file-check-2" },
+    { id: "final-year", title: "Final School Year", date: "2025–2026", icon: "star" },
+    { id: "graduation", title: "Graduation Day", date: "Class of 2026", icon: "graduation-cap" },
+    { id: "next-chapter", title: "The Next Chapter", date: "Starting now", icon: "sparkles" }
   ],
   achievements: [
     { title: "High School Completed", message: "A chapter finished with courage, patience, and well-earned pride.", icon: "award" },
