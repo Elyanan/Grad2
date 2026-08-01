@@ -11,7 +11,7 @@ window.GRADUATION_DATA = {
     graduationYear: "2026",
     graduationDate: "August 2026",
     schoolName: "Yeneta Academy",
-    portrait: "media/images/her-graduation-photo.jpg"
+    portrait: "media/images/graduate.png"
   },
   sender: { fullName: "Elyanan Wondwossen" },
   opening: {
