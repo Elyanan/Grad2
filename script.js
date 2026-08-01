@@ -81,7 +81,7 @@
     setText("diplomaSignature", data.sender.fullName);
     setText("speechIntroduction", data.speech.introduction);
     setText("speechInitials", data.graduate.initials);
-    setText("achievementIntro", `Tap or click each award to reveal the reason it belongs to ${data.graduate.firstName}.`);
+    setText("achievementIntro", `Tap or click each award to reveal the reason it belongs to you.`);
     setText("letterPreview", `A letter for ${data.graduate.firstName}`);
     setText("promiseSignature", `— ${data.sender.fullName}`);
     setText("finalHeading", data.graduate.fullName);
