@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Graduation portrait placeholder</title>
+  <desc id="desc">Elegant silhouette placeholder to replace with Rediate's graduation photo.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="24%" r="76%"><stop offset="0" stop-color="#263a6c"/><stop offset=".5" stop-color="#101a35"/><stop offset="1" stop-color="#070b18"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3e5ab"/><stop offset="1" stop-color="#9a7420"/></linearGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#bg)"/>
+  <circle cx="600" cy="455" r="180" fill="#0a1024" stroke="#d4af37" stroke-opacity=".35" stroke-width="5"/>
+  <path d="M300 1370c30-355 130-568 300-568s270 213 300 568" fill="#090e20" stroke="#d4af37" stroke-opacity=".28" stroke-width="5"/>
+  <path d="M385 360l215-105 215 105-215 108z" fill="#080d1d" stroke="url(#gold)" stroke-width="10"/>
+  <path d="M600 468v90" stroke="#d4af37" stroke-width="10"/><circle cx="600" cy="565" r="16" fill="#d4af37"/>
+  <path d="M332 1010l268-175 268 175-90 360H422z" fill="#0b1126" stroke="#d4af37" stroke-opacity=".4" stroke-width="7"/>
+  <text x="600" y="1280" fill="#f3e5ab" text-anchor="middle" font-family="Georgia,serif" font-size="60">Rediate Markos</text>
+  <text x="600" y="1350" fill="#a8b2cc" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" letter-spacing="8">REPLACE WITH HER PHOTO</text>
+</svg>

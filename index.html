@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#100B1C" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Rediate Markos — Class of 2026</title>
+  <meta name="description" content="A private graduation ceremony created with love for Rediate Markos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://unpkg.com/lucide@1.28.0/dist/umd/lucide.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main id="siteRoot" class="site-root">
+    <div id="preloader" class="preloader" aria-live="polite">
+      <div class="preloader-icon"><i data-lucide="graduation-cap" aria-hidden="true"></i></div>
+      <p>Preparing your ceremony...</p>
+      <div class="preloader-track"><span></span></div>
+    </div>
+
+    <section id="openingScreen" class="opening-screen" aria-labelledby="openingTitle">
+      <div class="opening-spotlight" aria-hidden="true"></div>
+      <div class="opening-content">
+        <div class="opening-animate opening-delay-1">
+          <i data-lucide="graduation-cap" class="opening-cap" aria-hidden="true"></i>
+          <p class="eyebrow" id="openingEyebrow"></p>
+        </div>
+        <h1 id="openingTitle" class="opening-animate opening-delay-2"></h1>
+        <p class="opening-celebrating opening-animate opening-delay-3">Celebrating</p>
+        <p id="openingName" class="opening-name gold-text opening-animate blur opening-delay-4"></p>
+        <p id="openingSubtitle" class="opening-subtitle opening-animate opening-delay-5"></p>
+        <div class="opening-animate opening-delay-6">
+          <button id="beginButton" class="gold-button" type="button">Begin the Ceremony <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+          <p class="interaction-note">Music begins only after you press the button.</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="ceremonyContent" class="ceremony-content" hidden>
+      <canvas id="particlesCanvas" class="fixed-effects-canvas" aria-hidden="true"></canvas>
+      <canvas id="celebrationCanvas" class="celebration-canvas" aria-hidden="true"></canvas>
+      <div class="ceremony-progress" aria-label="Ceremony progress"><div id="progressBar" class="ceremony-progress-bar"></div></div>
+
+      <div class="audio-controls" aria-label="Audio controls">
+        <button id="musicToggle" type="button" aria-label="Pause background music"><i data-lucide="pause"></i></button>
+        <button id="muteToggle" type="button" aria-label="Mute audio"><i data-lucide="volume-2"></i></button>
+        <span id="audioLabel" class="audio-label"><i data-lucide="music-2"></i> Ceremony audio</span>
+      </div>
+
+      <nav id="sectionNav" class="section-nav" aria-label="Ceremony sections">
+        <button id="navToggle" class="section-nav-toggle" type="button" aria-expanded="false" aria-label="Toggle ceremony navigation"><i data-lucide="menu"></i></button>
+        <div id="navPanel" class="section-nav-panel"></div>
+      </nav>
+
+      <button id="skipAnimations" class="skip-animation-button" type="button"><i data-lucide="fast-forward"></i><span>Skip animation</span></button>
+
+      <section id="ceremony" class="ceremony-section stage-section" aria-labelledby="stageTitle">
+        <div class="curtain curtain-left" aria-hidden="true"></div>
+        <div class="curtain curtain-right" aria-hidden="true"></div>
+        <div class="stage-beam stage-beam-left" aria-hidden="true"></div>
+        <div class="stage-beam stage-beam-right" aria-hidden="true"></div>
+        <div class="stage-audience-lights" aria-hidden="true"></div>
+        <div class="section-shell stage-content">
+          <div class="stage-emblem reveal"><i data-lucide="graduation-cap"></i><span id="stageClassYear"></span></div>
+          <div class="stage-copy">
+            <p id="stageTitle" class="reveal"></p>
+            <p id="stageMessageTwo" class="reveal"></p>
+          </div>
+          <div class="stage-podium" aria-hidden="true">
+            <div class="podium-top"></div>
+            <div class="podium-face"><i data-lucide="award"></i><span id="podiumInitials"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="entrance" class="ceremony-section entrance-section" aria-labelledby="entranceTitle">
+        <div class="entrance-spotlight" aria-hidden="true"></div>
+        <div class="section-shell entrance-layout">
+          <div class="entrance-copy">
+            <p class="eyebrow reveal">Please welcome our graduate...</p>
+            <h2 id="entranceTitle" class="reveal"></h2>
+            <p class="reveal">Walking into a future she earned, carrying every lesson, every hope, and every person who believes in her.</p>
+          </div>
+          <div class="graduate-portrait-wrap reveal reveal-left">
+            <div class="portrait-halo" aria-hidden="true"></div>
+            <img id="graduatePortrait" class="graduate-portrait" alt="Rediate Markos, the graduate" />
+            <div class="floating-cap"><i data-lucide="graduation-cap"></i></div>
+            <div class="portrait-sparkles" aria-hidden="true"><i data-lucide="sparkles"></i><i data-lucide="sparkles"></i><i data-lucide="sparkles"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="diploma" class="ceremony-section diploma-section" aria-labelledby="diplomaHeading">
+        <div class="section-shell">
+          <header class="section-heading reveal">
+            <p class="eyebrow">Diploma presentation</p>
+            <h2>The moment has arrived</h2>
+            <div class="section-heading-copy"><p>A formal recognition of the work, growth, and courage behind this milestone.</p></div>
+          </header>
+          <div id="diplomaCard" class="diploma-card observe-diploma">
+            <div class="diploma-corner top-left"></div><div class="diploma-corner top-right"></div><div class="diploma-corner bottom-left"></div><div class="diploma-corner bottom-right"></div>
+            <i data-lucide="scroll-text" class="diploma-icon" aria-hidden="true"></i>
+            <p id="diplomaLabel" class="diploma-label"></p>
+            <p class="diploma-presented">Presented with pride to</p>
+            <h2 id="diplomaHeading"></h2>
+            <p id="diplomaCitation" class="diploma-citation"></p>
+            <p id="diplomaYear" class="diploma-year"></p>
+            <div class="diploma-signature"><span>With endless pride and love,</span><strong id="diplomaSignature"></strong></div>
+            <div class="accepted-seal"><i data-lucide="circle-check-big"></i><span>You did it.</span></div>
+          </div>
+          <div class="diploma-actions"><button id="acceptDiploma" class="gold-button" type="button">Accept Diploma <i data-lucide="graduation-cap"></i></button></div>
+        </div>
+      </section>
+
+      <section id="speech" class="ceremony-section speech-section" aria-labelledby="speechHeading">
+        <div class="section-shell">
+          <header class="section-heading reveal">
+            <p class="eyebrow">My graduation speech</p>
+            <h2>Words for this moment</h2>
+            <div class="section-heading-copy"><p id="speechIntroduction"></p></div>
+          </header>
+          <div class="speech-stage">
+            <div id="speechInitials" class="speech-podium-mark" aria-hidden="true"></div>
+            <div class="speech-paper">
+              <div class="speech-toolbar">
+                <div><span>Speech progress</span><strong id="speechCount"></strong></div>
+                <button id="narrationToggle" type="button" aria-label="Play optional narration"><i data-lucide="play"></i><span>Narration</span></button>
+              </div>
+              <div class="speech-progress"><span id="speechProgress"></span></div>
+              <article id="speechArticle" class="speech-article"></article>
+              <div class="speech-controls">
+                <button id="speechPrevious" type="button"><i data-lucide="chevron-left"></i> Previous</button>
+                <button id="speechNext" class="gold-button" type="button">Continue to the Next Chapter <i data-lucide="chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey" class="ceremony-section timeline-section" aria-labelledby="journeyTitle">
+        <div class="section-shell">
+          <header class="section-heading reveal"><p class="eyebrow">Journey to graduation</p><h2 id="journeyTitle">Every step led here</h2><div class="section-heading-copy"><p>Not one moment, but hundreds of small choices, lessons, friendships, and acts of courage.</p></div></header>
+          <div id="timeline" class="timeline"><div class="timeline-line"></div></div>
+        </div>
+      </section>
+
+      <section id="achievements" class="ceremony-section achievements-section" aria-labelledby="achievementsTitle">
+        <div class="section-shell">
+          <header class="section-heading reveal"><p class="eyebrow">Hall of achievements</p><h2 id="achievementsTitle">Honors earned beyond the diploma</h2><div class="section-heading-copy"><p id="achievementIntro"></p></div></header>
+          <div id="achievementGrid" class="achievement-grid"></div>
+        </div>
+      </section>
+
+      <section id="memories" class="ceremony-section gallery-section" aria-labelledby="galleryTitle">
+        <div class="section-shell">
+          <header class="section-heading reveal"><p class="eyebrow">Graduation memories</p><h2 id="galleryTitle">The moments worth keeping</h2><div class="section-heading-copy"><p>Replace the sample artwork with your favorite graduation and relationship photos in the media folder.</p></div></header>
+          <div id="galleryGrid" class="gallery-grid"></div>
+        </div>
+      </section>
+
+      <section id="future" class="ceremony-section future-section" aria-labelledby="futureTitle">
+        <div class="night-sky" aria-hidden="true"></div>
+        <div class="section-shell future-shell">
+          <header class="section-heading reveal"><p class="eyebrow">The future ahead</p><h2 id="futureTitle">A sky full of wishes</h2><div class="section-heading-copy"><p>Some stars are carrying a message for you.</p><p class="star-invitation"><i data-lucide="sparkles" aria-hidden="true"></i> Touch any glowing star and let it speak.</p></div></header>
+          <div id="constellation" class="constellation">
+            <svg id="constellationLines" class="constellation-lines" viewBox="0 0 100 86" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <div class="constellation-center" aria-hidden="true"><i data-lucide="sparkles"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="letter" class="ceremony-section letter-section" aria-labelledby="letterTitle">
+        <div class="section-shell letter-shell">
+          <header class="section-heading reveal"><p class="eyebrow">A letter to your future self</p><h2 id="letterTitle">For the woman you are becoming</h2><div class="section-heading-copy"><p>Some words are meant to be opened slowly and kept for the days ahead.</p></div></header>
+          <button id="openLetter" type="button" class="envelope" aria-label="Open the letter to your future self">
+            <div class="envelope-back"></div><div id="letterPreview" class="envelope-paper-preview"></div><div class="envelope-front"></div><div class="wax-seal"><i data-lucide="stamp"></i></div><span>Break the seal</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="promise" class="ceremony-section promise-section" aria-labelledby="promiseTitle">
+        <div class="promise-glow" aria-hidden="true"></div>
+        <div class="section-shell promise-content">
+          <div class="particle-heart reveal"><i data-lucide="heart" fill="currentColor"></i></div>
+          <div id="promiseTitle"></div>
+          <span id="promiseSignature" class="reveal"></span>
+        </div>
+      </section>
+
+      <section id="final" class="ceremony-section final-section" aria-labelledby="finalHeading">
+        <div class="final-rays" aria-hidden="true"></div>
+        <div id="finalCapToss" class="final-cap-toss"><i data-lucide="graduation-cap"></i></div>
+        <div class="section-shell final-content">
+          <p class="eyebrow reveal">One final announcement...</p>
+          <h2 id="finalHeading" class="reveal reveal-scale"></h2>
+          <p class="final-title">High School Graduate</p>
+          <p id="finalYear" class="final-year"></p>
+          <div id="finalMessages" class="final-message-list"></div>
+          <i data-lucide="sparkles" class="final-sparkles" aria-hidden="true"></i>
+          <button id="nextChapter" class="gold-button" type="button">Begin Your Next Chapter <i data-lucide="arrow-right"></i></button>
+        </div>
+      </section>
+
+      <footer class="site-footer"><span>Created for a remarkable graduate.</span><button id="footerReplay" type="button"><i data-lucide="rotate-ccw"></i> Replay ceremony</button></footer>
+    </div>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Graduation memory viewer" hidden>
+      <button id="lightboxClose" type="button" class="lightbox-close" aria-label="Close image viewer"><i data-lucide="x"></i></button>
+      <button id="lightboxPrevious" type="button" class="lightbox-prev" aria-label="Previous image"><i data-lucide="chevron-left"></i></button>
+      <figure><img id="lightboxImage" class="lightbox-image" alt="" /><figcaption id="lightboxCaption"></figcaption></figure>
+      <button id="lightboxNext" type="button" class="lightbox-next" aria-label="Next image"><i data-lucide="chevron-right"></i></button>
+    </div>
+
+    <div id="letterModal" class="letter-modal" role="dialog" aria-modal="true" aria-label="Letter to future Rediate" hidden>
+      <button id="letterClose" type="button" aria-label="Close letter"><i data-lucide="x"></i></button>
+      <article><i data-lucide="mail-open" aria-hidden="true"></i><div id="letterContent"></div><button id="letterKeep" class="gold-button" type="button">Keep this letter close</button></article>
+    </div>
+
+    <div id="closingScreen" class="closing-screen" hidden>
+      <div class="closing-stars" aria-hidden="true"></div>
+      <div class="closing-card">
+        <i data-lucide="graduation-cap" class="closing-cap"></i>
+        <p id="closingYear" class="eyebrow"></p>
+        <h2 id="closingName"></h2>
+        <p id="closingMain" class="closing-main"></p>
+        <p id="closingSub" class="closing-sub"></p>
+        <div class="closing-details"><span id="closingDate"></span><span id="closingCreator"></span></div>
+        <div class="closing-actions">
+          <button id="closingReplay" class="gold-button" type="button"><i data-lucide="rotate-ccw"></i> Replay</button>
+          <button id="returnSpeech" type="button"><i data-lucide="scroll-text"></i> Return to speech</button>
+          <button id="viewGallery" type="button"><i data-lucide="gallery-horizontal"></i> View gallery</button>
+        </div>
+        <p id="postscript" class="postscript"></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
