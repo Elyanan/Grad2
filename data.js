@@ -10,8 +10,8 @@ window.GRADUATION_DATA = {
     initials: "RM",
     graduationYear: "2026",
     graduationDate: "August 2026",
-    schoolName: "Her High School",
-    portrait: "media/images/her-graduation-photo.svg"
+    schoolName: "Yeneta Academy",
+    portrait: "media/images/her-graduation-photo.jpg"
   },
   sender: { fullName: "Elyanan Wondwossen" },
   opening: {
@@ -32,7 +32,7 @@ window.GRADUATION_DATA = {
     chapters: [
       {
         id: "today",
-        title: "Chapter One — You Reached This Day",
+        title: "Chapter One - You Reached This Day",
         body: [
           "Today is your graduation day.",
           "I know this day did not come easily. There were many school days, many exams, stress, tiredness, and times when you may have wanted everything to finish quickly.",
@@ -43,7 +43,7 @@ window.GRADUATION_DATA = {
       },
       {
         id: "who-you-are",
-        title: "Chapter Two — The Person I Know",
+        title: "Chapter Two - The Person I Know",
         body: [
           "I am proud that you graduated, but I am also proud of the person you are.",
           "You are kind, caring, strong, and stronger than you think btw. You have a good heart, and you make people around you feel happy and comfortable.",
@@ -53,7 +53,7 @@ window.GRADUATION_DATA = {
       },
       {
         id: "overcome",
-        title: "Chapter Three — You Did Not Give Up",
+        title: "Chapter Three - You Did Not Give Up",
         body: [
           "There were probably many difficult days during these years.",
           "Some days were good, and some days were not. Sometimes you may have felt tired, worried, disappointed, or unsure about yourself.",
@@ -64,7 +64,7 @@ window.GRADUATION_DATA = {
       },
       {
         id: "future",
-        title: "Chapter Four — What I Want for Your Future",
+        title: "Chapter Four - What I Want for Your Future",
         body: [
           "For your future, I want you to be happy.",
           "I want you to believe in yourself, even when you are afraid or confused. I want you to follow the things you really want, not only what other people want for you.",
@@ -99,12 +99,10 @@ window.GRADUATION_DATA = {
     { title: "Graduate of the Year", message: "Not because the journey was perfect, but because you made it yours.", icon: "award" }
   ],
   gallery: [
-    { src: "media/images/memory-1.svg", alt: "Graduation memory placeholder one", caption: "A smile I will never get tired of seeing." },
-    { src: "media/images/memory-2.svg", alt: "Graduation memory placeholder two", caption: "One of the moments I knew how special you were." },
-    { src: "media/images/memory-3.svg", alt: "Graduation memory placeholder three", caption: "A memory I will always keep." },
-    { src: "media/images/memory-4.svg", alt: "Graduation memory placeholder four", caption: "The graduate and the person I am endlessly proud of." },
-    { src: "media/images/memory-5.svg", alt: "Graduation memory placeholder five", caption: "A quiet moment that still means everything." },
-    { src: "media/images/memory-6.svg", alt: "Graduation memory placeholder six", caption: "The beginning of a lifetime of beautiful chapters." }
+    { src: "media/images/memory-1.jpg", alt: "Graduation memory placeholder one", caption: "A smile I will never get tired of seeing." },
+    { src: "media/images/memory-2.jpg", alt: "Graduation memory placeholder two", caption: "One of the moments I knew how special you were." },
+    { src: "media/images/memory-3.jpg", alt: "Graduation memory placeholder three", caption: "The graduate and the person I am endlessly proud of." },
+    { src: "media/images/memory-4.jpg", alt: "Graduation memory placeholder four", caption: "The beginning of a lifetime of beautiful chapters." }
   ],
   wishes: [
     { label: "Confidence", message: "May you always have the confidence to enter rooms you once thought were beyond your reach." },
@@ -160,4 +158,4 @@ window.GRADUATION_DATA = {
     speech: "media/audio/speech.mp3",
     envelope: "media/audio/envelope.mp3"
   }
-};
+}
